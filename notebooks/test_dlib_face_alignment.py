@@ -4,10 +4,11 @@ import dlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 #%%
-shape_predictor_path = '/srv/models/shape_predictor_5_face_landmarks.dat'
+face_detector_path = '/srv/models/dlib/mmod_human_face_detector.dat'
+shape_predictor_path = '/srv/models/dlib/shape_predictor_68_face_landmarks_GTX.dat'
 image_path = '/srv/data/frames/frame_00102.png'
 #%%
-detector = dlib.get_frontal_face_detector()
+detector = dlib.cnn_face_detection_model_v1(face_detector_path)
 shape_predictor = dlib.shape_predictor(shape_predictor_path)
 # %%
 image = dlib.load_rgb_image(image_path) # image.shape (540, 1024, 3)
