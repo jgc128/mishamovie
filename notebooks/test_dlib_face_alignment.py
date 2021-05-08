@@ -6,11 +6,11 @@ import dlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 #%%
-model_path = '/mnt/batch/tasks/shared/LS_root/mounts/clusters/misha-movie-compute-k80/code/Users/jgc128/dlib-models/'
-data_path = '/mnt/batch/tasks/shared/LS_root/mounts/clusters/misha-movie-compute-k80/code/data/'
+model_path = '/home/azureuser/cloudfiles/code/Users/jgc128/dlib-models/'
+data_path = '/home/azureuser/cloudfiles/code/data/'
 face_detector_path = os.path.join(model_path, 'mmod_human_face_detector.dat')
 shape_predictor_path = os.path.join(model_path, 'shape_predictor_68_face_landmarks_GTX.dat')
-image_path = os.path.join(data_path, 'frames/frame_00065.png')
+image_path = os.path.join(data_path, 'frames/frame_00007.png')
 #%%
 detector = dlib.cnn_face_detection_model_v1(face_detector_path)
 shape_predictor = dlib.shape_predictor(shape_predictor_path)
