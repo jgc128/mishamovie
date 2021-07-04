@@ -33,12 +33,12 @@ TMP_DIR=${DATA_DIR}/tmp
 #     --output_dir ${FACES_DIR} \
 #     --faces_info_dir ${FACES_INFO_DIR}
 
-# # Insert aged faces into the frames
-# python mishamovie/pipeline_steps/insert_faces.py \
-#     --frames_dir ${FRAMES_DIR} \
-#     --faces_dir ${FACES_AGED_DIR} \
-#     --output_dir ${FRAMES_AGED_DIR} \
-#     --faces_info_dir ${FACES_INFO_DIR}
+# Insert aged faces into the frames
+python mishamovie/pipeline_steps/insert_faces.py \
+    --frames_dir ${FRAMES_DIR} \
+    --faces_dir ${FACES_AGED_DIR} \
+    --output_dir ${FRAMES_AGED_DIR} \
+    --faces_info_dir ${FACES_INFO_DIR}
 
 # Combine frames
 python mishamovie/pipeline_steps/combine_frames.py \

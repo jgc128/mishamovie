@@ -20,13 +20,17 @@ def parse_args():
 
 
 def main():
+    # TODO: fmpeg -i face_close_aged_long.mp4 -filter "minterpolate='fps=120'" zzzz3.mp4
+    # https://superuser.com/a/1185430
+    # https://github.com/dthpham/butterflow
+
     args = parse_args()
     print(args)
 
     input_filename = f'{args.input_dir}/{args.input_name_template}'
     output_filename = f'{args.output_dir}/{args.output_filename}'
     cmd = [
-        'ffmpeg', '-framerate', str(args.fps), '-i', input_filename,
+        'ffmpeg', '-y', '-framerate', str(args.fps), '-i', input_filename,
         '-c:v', 'libx264', '-vf', f'fps={args.fps},pad=ceil(iw/2)*2:ceil(ih/2)*2', '-pix_fmt', 'yuv420p',
         output_filename
     ]
