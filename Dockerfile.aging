@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/azureml/openmpi3.1.2-cuda10.0-cudnn7-ubuntu18.04
+
+RUN apt-get update && apt install -y libgl1-mesa-dev ffmpeg git
+RUN mkdir -p /svr/code/aging
+RUN cd /svr/code/aging && git clone https://github.com/jgc128/HRFAE.git . && git checkout eca6529fcb360b7609bd23b92009917eaa9b930a
+RUN cd /svr/code/aging/logs/001 && chmod +x ./download.sh && ./download.sh

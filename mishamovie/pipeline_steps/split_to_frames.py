@@ -9,7 +9,7 @@ def parse_args():
     parser.add_argument('--input_filename', help='Input file name', required=True)
     parser.add_argument('--output_dir', help='Output dir', required=True)
     parser.add_argument('--output_name_template', default='frame_%5d.png', help='Output name template', required=False)
-    parser.add_argument('--fps', default=10, type=int, help='Frames per second', required=False)
+    parser.add_argument('--fps', default=30, type=int, help='Frames per second', required=False)
 
     args = parser.parse_args()
 

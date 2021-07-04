@@ -1,13 +1,12 @@
 import os
-import json
 import argparse
-import subprocess
 from pathlib import Path
 
 import dlib
 from tqdm import tqdm
 
 from mishamovie.utils.io import save_json
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Split video into frames')
@@ -88,6 +87,7 @@ def main():
     save_json(faces, output_filename)
 
     print(f'Saved: {output_filename}')
+
 
 if __name__ == '__main__':
     main()

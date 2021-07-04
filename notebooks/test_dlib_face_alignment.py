@@ -17,6 +17,8 @@ shape_predictor = dlib.shape_predictor(shape_predictor_path)
 # %%
 image = dlib.load_rgb_image(image_path) # image.shape (540, 1024, 3)
 #%%
+plt.imshow(image)
+#%%
 detected_faces = detector(image, 1)
 #%%
 plt.imshow(image[
